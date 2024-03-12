@@ -9,15 +9,16 @@
                 @include('includes.success_message')
                 @include('includes.submit_idea')
                 <hr>
-                <div class="mt-3">
-                    {{ $ideas->links() }}
-
-                    @foreach ($ideas as $idea)
+                @forelse ($ideas as $idea)
+                    <div class="mt-3">
+                        {{ $ideas->withQueryString()->links() }}
                         @include('includes.idea_card')
-                    @endforeach
-                    {{ $ideas->links() }}
+                        {{ $ideas->withQueryString()->links() }}
+                    </div>
+                @empty
+                    <p class="text-center m-3">No results found</p>
+                @endforelse
 
-                </div>
             </div>
             <div class="col-3">
                 @include('includes.search_bar')

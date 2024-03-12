@@ -2,4 +2,5 @@ Documentation for routes : https://laravel.com/docs/10.x/controllers#shallow-nes
 Delete last 2 migrations: php artisan migrate:refresh --step=2
 
 php artisan make:model Comment -m -c // Making Model, Migration, Controller
+-r = resources -> Hozzá ad minden fontos methodot
 
