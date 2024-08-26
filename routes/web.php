@@ -8,9 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-
+    $jobs =  JobListing::with('employer')->get();
     return view('jobs', [
-        'jobs' =>  JobListing::all()
+        'jobs' => $jobs
     ]);
 });
 
