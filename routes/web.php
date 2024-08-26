@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\JobListing;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
