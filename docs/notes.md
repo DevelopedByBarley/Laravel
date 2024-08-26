@@ -73,3 +73,13 @@ A course_student tábla (student_id és course_id) tárolja a kapcsolatokat a di
 
 
 
+Ep 14 - Paginator
+
+php artisan vendor:publish
+
+
+
+Ep 15 - Seeding db
+
+php artisan migrate:fresh --seed // Összes seeder lefuttatása
+php artisan db:seed --class=JobListingSeeder // 1 seeder lefuttatása
