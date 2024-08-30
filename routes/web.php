@@ -1,13 +1,25 @@
 <?php
 
-use App\Http\Controllers\JobListingController;
-use App\Models\JobListing;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\JobListingController;
+use App\Http\Controllers\RegistrationController;
 
 // Home
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 Route::resource('jobs', JobListingController::class);
+
+
+//Auth
+Route::get('/register', [RegistrationController::class, 'create']);
+Route::post('/register', [RegistrationController::class, 'store']);
+
+
+Route::get('/login', [SessionController::class, 'create']);
+Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
+
 
 
 /* Route::controller(JobListingController::class)->group(function () {
