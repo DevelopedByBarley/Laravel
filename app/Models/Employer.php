@@ -12,4 +12,7 @@ class Employer extends Model
     public function jobs() {
         return $this->hasMany(JobListing::class);
     }
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
