@@ -41,13 +41,17 @@ class JobListingController extends Controller
 
     public function edit(JobListing $job)
     {
-        Gate::define('edit-job', function (User $user, JobListing $job) {
+/*         Gate::define('edit-job', function (User $user, JobListing $job) {
             return $job->employer->user->is($user);
-        });
+        }); */
 
 
-        if(Auth::guest()) {
+/*         if(Auth::guest()) {
             return redirect('/login');
+        } */
+
+        if(Auth::user()->cannot('edit-job', $job)) {
+            dd('hello');
         }
 
         Gate::authorize('edit-job', $job);
