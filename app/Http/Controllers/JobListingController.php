@@ -50,12 +50,12 @@ class JobListingController extends Controller
             return redirect('/login');
         } */
 
-        if(Auth::user()->cannot('edit-job', $job)) {
+     /*    if(Auth::user()->cannot('edit-job', $job)) {
             dd('hello');
-        }
+        } */
 
-        Gate::authorize('edit-job', $job);
-
+/*         Gate::authorize('edit-job', $job);
+ */
      /*   if( Gate::denies('edit-job', $job)) {
         //
        } */
