@@ -4,12 +4,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\JobListingController;
 use App\Http\Controllers\RegistrationController;
+use App\Jobs\TranslateJob;
 use App\Mail\JobListingPosted;
+use App\Models\JobListing;
 use Illuminate\Support\Facades\Mail;
 
 // Home
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
+use Illuminate\Support\Facades\Log;
+
+Route::get('/test', function () {
+    $job = JobListing::first();
+
+    TranslateJob::dispatch($job);
+
+    return 'Task dispatched!';
+});
+
 
 
 //Route::resource('jobs', JobListingController::class)->only(['index', 'show']);
