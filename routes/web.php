@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\JobListingController;
 use App\Http\Controllers\RegistrationController;
+use App\Mail\JobListingPosted;
+use Illuminate\Support\Facades\Mail;
 
 // Home
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
+
+
 //Route::resource('jobs', JobListingController::class)->only(['index', 'show']);
 //Route::resource('jobs', JobListingController::class)->except(['index', 'show'])->middleware('auth');
 
