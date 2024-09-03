@@ -26,9 +26,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::preventLazyLoading();
         //Paginator::useBootstrapFive();
-
-        Gate::define('edit-job', function (User $user, JobListing $job) {
-            return $job->employer->user->is($user);
-        });
     }
 }
